@@ -1,0 +1,400 @@
+/* 1. RESET E VARIABILI */
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #67b0ff; /* L'aquamarine del  schema */
+  --bg-body: #f4f7f6;
+  --text-dark: #2c3e50;
+  --border-color: #ddd;
+}
+
+/* 2. LAYOUT GENERALE (Sticky Footer) */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-body);
+  color: #333;
+}
+
+/* 3. HEADER E NAVIGAZIONE */
+header {
+  height: 100px;
+  background-color: var(--secondary-color);
+  padding: 8px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+h1 {
+  color: black;
+  font-size: 2rem;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: " | ";
+  margin: 0 8px;
+}
+
+nav a:last-child::after {
+  content: "";
+}
+
+nav a:hover {
+  text-decoration: underline;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+/* 4. CONTENUTO PRINCIPALE (MAIN) */
+main {
+  flex-grow: 1;
+  width: 100%;
+  max-width: 800px; /* Aumentato per ospitare meglio le tabelle */
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+h2 {
+  color: var(--text-dark);
+  font-size: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 10px;
+}
+
+/* 5. FORM E INPUT */
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #555;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(52,152,219,0.3);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #bfd7e7;
+}
+
+/* 6. TABELLE (Stile Unificato) */
+.style-table, .patient-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 16px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.style-table thead tr, .patient-table th {
+  background-color: var(--primary-color);
+  color: white;
+  text-align: left;
+}
+
+.style-table th, .style-table td, 
+.patient-table th, .patient-table td {
+  padding: 12px 15px;
+  border: 1px solid #eee;
+}
+
+.style-table tbody tr:nth-of-type(even), 
+.patient-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* 7. FEEDBACK E FOOTER */
+.message-success {
+  background-color: #d4edda;
+  color: #155724;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.message-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+footer {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-color);
+  font-weight: bold;
+}
+
+
+/* Stile per il contenitore del form */
+.appointment-form {
+    background: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    
+    /* MODIFICHE LARGHEZZA */
+    width: 90%;          /* Occupa il 90% dello spazio disponibile su schermi piccoli */
+    max-width: 800px;    /* Aumentato a 800px (come il tuo 'main') per essere più largo */
+    
+    margin: 20px auto;   /* Centra il form orizzontalmente */
+}
+
+/* Titoli delle sezioni per separare bene le informazioni */
+.form-section-title {
+    font-weight: bold;
+    color: var(--primary-color);
+    margin: 25px 0 15px 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+}
+/* Box per il tasto annulla */
+.cancel-box {
+    text-align: center;
+    margin-top: 15px;
+}
+
+/* Assicurati che gli input datetime e date abbiano lo stesso stile degli altri */
+input[type="date"], 
+input[type="datetime-local"] {
+    font-family: inherit;
+}
+
+/* Stile per i gruppi di input */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Stile per le etichette */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Stile per input e select */
+.form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Importante per il padding */
+}
+
+/* Stile per il bottone */
+.btn-submit {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background: #218838;
+}
+
+/* Stile specifico per il link di modifica nella tabella */
+.btn-edit {
+    color: #e67e22;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.btn-edit:hover {
+    color: #d35400;
+    text-decoration: underline;
+}
+
+/* Assicuriamoci che la tabella occupi tutto lo spazio se necessario */
+.patient-table {
+    margin-top: 10px;
+}
+
+.flex {
+    display: flex;
+    gap: 40px; /* spazio tra Modifier e Voir */
+}
+
+
+
+/* Forza lo stile del pulsante supprimer */
+.patient-table .btn-delete, 
+td.flex .btn-delete {
+    color: #e74c3c !important; /* !important forza il colore */
+    background: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    font-weight: bold !important;
+    font-family: inherit !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    font-size: 16px !important;
+    display: inline-block !important;
+}
+
+.patient-table .btn-delete:hover {
+    color: #c0392b !important;
+    text-decoration: underline !important;
+}
+
+/* --- STILE PER LA BARRA DI RICERCA (EX 12) --- */
+.search-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+/* --- AZIONI NELLA TABELLA (EX 11) --- */
+.flex-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Reset del bottone Elimina per farlo sembrare un link */
+.btn-delete {
+    color: #e74c3c;
+    background: none;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: inherit;
+    padding: 0;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.btn-delete:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+/* Messaggio di nessun risultato */
+.no-results {
+    text-align: center;
+    padding: 30px;
+    color: #7f8c8d;
+    font-style: italic;
+}
+.btn-search {
+    flex-grow: 1;
+    padding: 10px 15px;
+    border: 1 ;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: green;
+    height: 50px;
+    width: 150px;
+
+}
+
+
+/* pagine */
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    background-color: #eee;
+    color: #333;
+    border-radius: 4px;
+}
+
+.pagination a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination a:hover {
+    background-color: #ddd;
+}
+
+/* Ajouter un patient et son rdv */
+
+
+
