@@ -63,10 +63,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <a href="../index.php">
             <h1>HOSPITAL E2N</h1>
         </a>
-      
+
         <nav>
-            <a href="2-liste-des-patient.php">Liste Patients</a>
             <a href="1-ajout-patient.php">Ajouter Patient</a>
+            <a href="2-liste-des-patient.php">Liste Patients</a>
+
 
             <a href="6-liste-rendezvous.php">Liste RDV</a>
             <a href="5-ajout-rdv.php">Ajouter RDV</a>

@@ -37,7 +37,7 @@ header {
 }
 
 h1 {
-  color: black;
+  color: rgb(223, 205, 205);          
   font-size: 2rem;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
@@ -187,28 +187,7 @@ footer {
 
 
 /* Stile per il contenitore del form */
-.appointment-form {
-    background: #f9f9f9;
-    padding: 30px;
-    border-radius: 8px;
-    border: 1px solid #ddd;
-    
-    /* MODIFICHE LARGHEZZA */
-    width: 90%;          /* Occupa il 90% dello spazio disponibile su schermi piccoli */
-    max-width: 800px;    /* Aumentato a 800px (come il tuo 'main') per essere più largo */
-    
-    margin: 20px auto;   /* Centra il form orizzontalmente */
-}
 
-/* Titoli delle sezioni per separare bene le informazioni */
-.form-section-title {
-    font-weight: bold;
-    color: var(--primary-color);
-    margin: 25px 0 15px 0;
-    border-bottom: 2px solid #eee;
-    padding-bottom: 5px;
-    font-size: 1.2rem;
-}
 /* Box per il tasto annulla */
 .cancel-box {
     text-align: center;

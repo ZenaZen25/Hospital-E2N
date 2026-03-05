@@ -22,7 +22,7 @@ try {
 <main class="container">
     <h2>Modifier le Rendez-vous</h2>
 
-    <form action="../process/8-process-modifier-rdv.php" method="POST">
+    <form action="../process/8-modifier-rdv.php" method="POST">
         <input type="hidden" name="id" value="<?= $id ?>">
 
         <div class="form-group">

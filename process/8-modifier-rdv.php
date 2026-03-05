@@ -50,7 +50,7 @@ try {
     ]);
 
     // Redirezione in caso di successo
-    header("Location: ../public/rendezvous.php?id=$id&success=1");
+    header("Location: ../public/7-rendezvous.php?id=$id&success=1");
     exit();
 
 } catch (PDOException $e) {
